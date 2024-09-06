@@ -1,0 +1,12 @@
+1.
+  a.
+    Yes.
+  b.
+    So that you can run multiple terminal based programs at once.
+2.
+  You can use either ls or ls -a if you want to see hiden files aswell.
+3.
+  cd ../../../Desktop
+4.
+  I cd into the directory I would like and because I want to have git
+  integration I just do a git clone of the ssh repo.  
