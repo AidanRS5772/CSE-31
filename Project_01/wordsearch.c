@@ -70,10 +70,16 @@ void printPuzzle(char** arr) {
 
 void searchPuzzle(char** arr, char* word) {
     char fist_c = *word;
+    if (fist_c >= 'a' && fist_c <= 'z') {
+        fist_c = fist_c - 'a' + 'A';
+    }
     int first_char_cnt = 0;
     for (int i = 0; i < bSize; i++) {
         for (int j = 0; j < bSize; j++) {
             char c = *(*(arr + i) + j);
+            if (c >= 'a' && c <= 'z') {
+                c = c - 'a' + 'A';
+            }
             if ((first_c == ))
 
             
