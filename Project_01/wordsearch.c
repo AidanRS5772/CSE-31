@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 
 // Declarations of the two functions you will implement
 // Feel free to declare any helper functions or global variables
 void printPuzzle(char** arr);
 void searchPuzzle(char** arr, char* word);
 int bSize;
+size_t wrd_len;
 
 // Main function, DO NOT MODIFY 	
 int main(int argc, char **argv) {
@@ -49,7 +51,7 @@ int main(int argc, char **argv) {
     printPuzzle(block);
     
     // Call searchPuzzle to the word in the puzzle
-    // searchPuzzle(block, word);
+    searchPuzzle(block, word);
     
     return 0;
 }
@@ -58,9 +60,6 @@ void printPuzzle(char** arr) {
     for (int i = 0; i < bSize; i++) {
         for (int j = 0; j < bSize; j++) {
             char c = *(*(arr + i) + j);
-            if (c >= 'a' && c <= 'z') {
-                c = c - 'a' + 'A';
-            }
             printf("%c", c);
             printf(" ");
         }
@@ -68,21 +67,57 @@ void printPuzzle(char** arr) {
     }
 }
 
-void searchPuzzle(char** arr, char* word) {
-    char fist_c = *word;
-    if (fist_c >= 'a' && fist_c <= 'z') {
-        fist_c = fist_c - 'a' + 'A';
+void upper(char* c){
+    if (*c >= 'a' && *c <= 'z') {
+        *c -= 32;
     }
-    int first_char_cnt = 0;
-    for (int i = 0; i < bSize; i++) {
-        for (int j = 0; j < bSize; j++) {
-            char c = *(*(arr + i) + j);
-            if (c >= 'a' && c <= 'z') {
-                c = c - 'a' + 'A';
-            }
-            if ((first_c == ))
+}
 
-            
+bool DFS(char** arr, char* word, size_t wrd_idx, int row, int col){
+    if (wrd_idx == wrd_len){
+        return true;
+    }
+
+    char wrd_char = *(word + wrd_idx);
+    upper(&wrd_char);
+
+    for(int i=-1; i <= 1; i++){
+        for(int j=-1; j <= 1; j++){
+            if (i == 0 && j == 0) continue;
+            int newRow = row + i;
+            int newCol = col + j;
+            if (newRow < 0 || newRow >= bSize || newCol < 0 || newCol >= bSize) continue;
+
+            char grid_char = *(*(arr+newRow)+newCol);
+            upper(&grid_char);
+
+            if (wrd_char == grid_char) {
+                if (DFS(arr, word, wrd_idx+1, newRow, newCol)) {
+                    return true;
+                }
+            }
         }
+    }
+
+    return false;
+}
+
+void searchPuzzle(char** arr, char* word) {
+    wrd_len = strlen(word);
+    char c = *word;
+    upper(&c);
+    bool found = false;
+    for(int i = 0; i < bSize; i++){
+        for(int j = 0; j < bSize; j++){
+            if (*(*(arr + i)+j) == c){
+                if (DFS(arr, word, 1, i, j)){
+                    printf("Word Found\n");
+                    found = true;
+                }
+            }
+        }
+    }
+    if (!found){
+        printf("Word Not Found\n");
     }
 }
