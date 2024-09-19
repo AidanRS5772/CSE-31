@@ -73,7 +73,16 @@ void upper(char* c){
     }
 }
 
-bool DFS(char** arr, char* word, size_t wrd_idx, int row, int col){
+int intlog_10(int num){
+    int out = 0;
+    while (num >= 10){
+        num /= 10;
+        out++;
+    }
+    return out;
+}
+
+bool DFS(char** arr, char* word, int** path, size_t wrd_idx, int row, int col){
     if (wrd_idx == wrd_len){
         return true;
     }
@@ -89,15 +98,17 @@ bool DFS(char** arr, char* word, size_t wrd_idx, int row, int col){
             if (newRow < 0 || newRow >= bSize || newCol < 0 || newCol >= bSize) continue;
 
             char grid_char = *(*(arr+newRow)+newCol);
-            upper(&grid_char);
 
             if (wrd_char == grid_char) {
-                if (DFS(arr, word, wrd_idx+1, newRow, newCol)) {
+                *(*(path+newRow)+newCol) *= 10;
+                *(*(path+newRow)+newCol) += wrd_idx+1;
+                if (DFS(arr, word, path, wrd_idx+1, newRow, newCol)) {
                     return true;
                 }
             }
         }
     }
+    *(*(path+row)+col) /= 10;
 
     return false;
 }
@@ -106,18 +117,43 @@ void searchPuzzle(char** arr, char* word) {
     wrd_len = strlen(word);
     char c = *word;
     upper(&c);
+
+    int** path = (int**)malloc(bSize*sizeof(int*));
+    for(int i = 0; i < bSize; i++){
+        *(path + i) = (int*)malloc(bSize*sizeof(int));
+        for(int j = 0; j < bSize; j++){
+            *(*(path+i)+j) = 0;
+        }
+    }
+
     bool found = false;
     for(int i = 0; i < bSize; i++){
         for(int j = 0; j < bSize; j++){
             if (*(*(arr + i)+j) == c){
-                if (DFS(arr, word, 1, i, j)){
-                    printf("Word Found\n");
+                *(*(path+i)+j) = 1;
+                if (DFS(arr, word, path, 1, i, j)){
                     found = true;
                 }
             }
         }
     }
-    if (!found){
-        printf("Word Not Found\n");
+
+    
+    if (found){
+        printf("\nWord Found!\n");
+        printf("Printing the search path:\n");
+        for (int i = 0; i < bSize; i++) {
+            for (int j = 0; j < bSize; j++) {
+                int val = *(*(path + i) + j);
+                int num_dig = intlog_10(val);
+                printf("%d", val);
+                for(int k=0; k<(5-num_dig); k++){
+                    printf(" ");
+                }
+            }
+            printf("\n");
+        }
+    }else{
+        printf("\nWord Not Found!\n");
     }
 }

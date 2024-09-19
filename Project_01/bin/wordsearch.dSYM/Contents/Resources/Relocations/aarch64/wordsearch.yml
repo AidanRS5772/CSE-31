@@ -2,9 +2,13 @@
 triple:          'arm64-apple-darwin'
 binary-path:     'bin/wordsearch'
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003B60, symSize: 0x228 }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000034E8, symSize: 0x234 }
   - { offsetInCU: 0x4D, offset: 0x4D, size: 0x8, addend: 0x0, symName: _bSize, symBinAddr: 0x100008000, symSize: 0x0 }
-  - { offsetInCU: 0x68, offset: 0x68, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x100003B60, symSize: 0x228 }
-  - { offsetInCU: 0xE4, offset: 0xE4, size: 0x8, addend: 0x0, symName: _printPuzzle, symObjAddr: 0x228, symBinAddr: 0x100003D88, symSize: 0x120 }
-  - { offsetInCU: 0x15C, offset: 0x15C, size: 0x8, addend: 0x0, symName: _searchPuzzle, symObjAddr: 0x348, symBinAddr: 0x100003EA8, symSize: 0x14 }
+  - { offsetInCU: 0x69, offset: 0x69, size: 0x8, addend: 0x0, symName: _wrd_len, symBinAddr: 0x100008008, symSize: 0x0 }
+  - { offsetInCU: 0xA4, offset: 0xA4, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x1000034E8, symSize: 0x234 }
+  - { offsetInCU: 0x120, offset: 0x120, size: 0x8, addend: 0x0, symName: _printPuzzle, symObjAddr: 0x234, symBinAddr: 0x10000371C, symSize: 0xE4 }
+  - { offsetInCU: 0x198, offset: 0x198, size: 0x8, addend: 0x0, symName: _searchPuzzle, symObjAddr: 0x318, symBinAddr: 0x100003800, symSize: 0x330 }
+  - { offsetInCU: 0x2E2, offset: 0x2E2, size: 0x8, addend: 0x0, symName: _upper, symObjAddr: 0x648, symBinAddr: 0x100003B30, symSize: 0x54 }
+  - { offsetInCU: 0x306, offset: 0x306, size: 0x8, addend: 0x0, symName: _intlog_10, symObjAddr: 0x69C, symBinAddr: 0x100003B84, symSize: 0x50 }
+  - { offsetInCU: 0x33C, offset: 0x33C, size: 0x8, addend: 0x0, symName: _DFS, symObjAddr: 0x6EC, symBinAddr: 0x100003BD4, symSize: 0x2A0 }
 ...
