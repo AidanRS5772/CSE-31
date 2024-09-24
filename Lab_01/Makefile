@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c99 -g3 -Wall -Wextra -Wpedantic
+CFLAGS = -std=c99 -g -Wall -Wextra -Wpedantic
 OUTPUT_DIR = bin
 
 all: $(OUTPUT_DIR)/punishment $(OUTPUT_DIR)/averages
