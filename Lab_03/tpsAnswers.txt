@@ -2,4 +2,6 @@
     1. Stack: runtime allocated memory of a known size at compile time, Heap: runtime allocated memory of a unknown size at compile time, Static: compiletime allocated memory that persists for the entire program.
     2. 
         a. 3
-        b. 
+        b. The variable "num" is an integer, ptr is an int pointer, and handle is an int double pointer.
+        c. The variable "num" is stored on the stack, the int pointer "ptr" is stored on the stack, the int double pointer "handle" is stored on the stack.
+        d. It will point to a heap allocated memory location.

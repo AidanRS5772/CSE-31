@@ -1,7 +1,6 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <malloc.h>
 
 int* bubbleSort(int arr[], int n) {
     int temp, i = 0, j = 0;

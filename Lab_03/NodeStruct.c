@@ -13,7 +13,8 @@ int main() {
     head->iValue = 5;
     head->fValue = 3.14;
 	
-	// Insert code here
+	printf("Value of head: %ld", head);
+    printf("Adress of Head: %ld", &head);
 	
 	
 	return 0;
