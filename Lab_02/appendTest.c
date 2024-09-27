@@ -18,10 +18,10 @@ char *append(char s1[], char s2[]) {
   int s2len = strlen(s2);
   char *word = (char *)malloc((s1len + s2len) * sizeof(char));
   for (int k = 0; k < s1len; k++) {
-    word[k] = s1[k];
+    *(word+k) = *(s1+k);
   }
   for (int k = 0; k < s2len; k++) {
-    word[k + s1len] = s2[k];
+    *(word + k + s1len) = *(s2+k);
   }
   return word;
 }
