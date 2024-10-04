@@ -12,7 +12,12 @@
 	handle = (int **) malloc(1 * sizeof(int *));
 	*handle = ptr;
 
-	// Insert code here
+	printf("num adr: %p\n", &num);
+	printf("ptr adr: %p\n", &ptr);
+	printf("ptr val: %p\n", ptr);
+	printf("handle adr: %p\n", &handle);
+	printf("handle val: %p\n", handle);
+	printf("handle dref: %p\n", *handle);
 
 	return 0;
 } 
