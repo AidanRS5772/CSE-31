@@ -1,0 +1,6 @@
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/MemCast.dir
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/MatrixMult.dir
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/Array2D.dir
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/CLEAN.dir
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/edit_cache.dir
+/Users/aidansgarlato/Programing/CSE-31/Lab_04/build/CMakeFiles/rebuild_cache.dir
