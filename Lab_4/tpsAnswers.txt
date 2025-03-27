@@ -1,0 +1,14 @@
+1.
+    1. I would expect it to output 0x2.
+    2. I would expect it to output 0x44434241.
+    4. I am not surprised. It outputs the byte values as expected and then goes back to the inputed int values from the previous intatiation. It prints `four_ints[0] = 0x44434241` then `four_ints[1] = 0x2`.
+    5.
+        a. One
+        b. Yes
+    6. They increment by 4 bytes each time because ints are 4 bytes in size.
+    7. They increment by one byte each time because chars are one byte in size.
+    10. When the pointer is incremented for the char pointer it increments by one byte but for the int pointer it increments by four bytes.
+2.
+    1. It allocates the memory for the an array of int pointers.
+    2. We can do this by arr[i] or *(arr+i).
+    4. We need to pass the size because arrays in C have no size information they are just pointers to the first element of the array.

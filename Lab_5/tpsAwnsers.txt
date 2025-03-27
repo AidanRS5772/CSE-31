@@ -1,0 +1,15 @@
+TPS1:
+    1. You go to file then open and navigate to the file you want to open.
+    2. You hit the tool button while in Run I/O mode.
+    3. You hit the green play button to run the program.
+    4. No.
+    5. You hit the green play button with the 1 sub script.
+TPS2:
+    1. .data is the preface for any constant global data that the program will use. .word is the preface for reserving memory in the .data section that is 4 bytes and generally a number but it is type agnostic. We then have .text which is the preface for the actual executable code.
+    2. It branches to the finish label on the condition that register $t3 is equal to 0.
+    3. It jumps to the fib label.
+    4. You can set a breakpoint by compiling and then hitting the breakpoint button for the line you want to break at in the execution window.
+    5. You press the play button again for continueing and you press the playbutton with the 1 subscript to step through.
+    6. In the registers tab on the left you can see the content of the registers and can edit them manually by clicking on them.
+    7. It is stored in the memory location 0x10010000.
+    8. The syscalls are calls to the kernal with the inputs of the function from the $v0 register and the arguments from the $a0-$a3 registers. The way you use it is you load the proper code into $v0 depending on what you want to do and then you load the argument for the call into the $a registers.

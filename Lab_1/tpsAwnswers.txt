@@ -1,0 +1,46 @@
+TPS 1:
+    1. Aizen Baidya
+    2.  Tutorials:  https://linuxconfig.org/learn-the-basics-of-the-zsh-shell
+                    https://www.youtube.com/watch?v=EZDX3C7NmFo&ab_channel=SiwalikMukherjee
+                    https://www.youtube.com/watch?v=12r8Zy1IYzI&ab_channel=CodeAcademy
+    3. We skipped sharing as we all perfer to us different terminal emulators.
+    4.
+
+TPS 2:
+    1. You can spotlight search for "Terminal" or open it from the applications folder.
+        1a. Yes you can have open multiple windows at once to do many things simultaneously.
+        1b. There are many instances where if you have a program running in the terminal and you want to do an additional thing you need another window. For example you have a nano instance running you save it and you wan to run what you just saved without quiting nano.
+    2. You can use the command `ls` to list all the files in the current directory, and you can use `ls -a` to list all files including hidden files.
+    3. `cd ~/Desktop` will change the directory to the desktop.
+
+TPS 3:
+    1. Tutorial: https://www3.ntu.edu.sg/home/ehchua/programming/cpp/gcc_make.html
+                 https://gcc.gnu.org/onlinedocs/
+    3. You use the comand `clang  main.c`
+    4. There are no errors and the `a.out` file is created.
+    5. The `-c` flag is used to compile the source file without linking. It creates an object file for each source file. It can be used to compile multiple source files separately and then link them together for one executable wich is useful for large projects.
+    6. The `-g` flag is used when you want to compile for debug mode. That allows debugers to analyze the code and find errors, or for better stack traces when error arise.
+    7. Instead of running 'clang main.c' alone you would add `-o cselab1` to the end.
+    8. If you use 'clang main.c' alone you get a `a.out` file. The default name for the executable when one isnt provided.
+    9. You can use `./a.out` to run the executable.
+
+TPS 4:
+    even_cnt, odd_cnt, even_sum, odd_sum = 0
+    input
+    while (input != 0){
+        sum_digit = 0
+        while (input > 0){
+            sum_digit += input % 10
+            input /= 10
+        }
+
+        if (sum_digit % 2 == 0){
+            even_cnt++
+            even_sum += sum_digit
+        } else {
+            odd_cnt++
+            odd_sum += sum_digit
+        }
+    }
+
+    return even_sum / even_cnt, odd_sum / odd_cnt

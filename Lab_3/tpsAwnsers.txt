@@ -1,0 +1,17 @@
+1:
+    1.
+        static: the variables declared in static memory are allocated at compile time and have lifetimes that are the entire duration of the program.
+        heap: the variables declared in dynamic memory are allocated at runtime and have lifetimes that are manually managed and can exceed the lifetime of the program.
+        stack: the variables declared in stack memory are allocated at runtime and have lifetimes that are automatically managed and are limited to the scope of the function or block in which they are declared.
+    2.
+        a. Three
+        b. Two are and one points to an int and another points to a int pointer.
+        c. `num`, `ptr`, and `handle` are all stack allocated. However, the value `ptr` and `handle` point to are on the heap.
+        d. The heap.
+2:
+    3. The values in a struct are stored sequentially in memory, and the head pointer points to the first value in the struct instance.
+3:
+    1.
+        a. The size needs to be passed to the array so that we can allocate enough space for the copy of the array and because arrays in C do not contain any size information as they are really just a pointer to the first element of the array.
+        b. No it is not it is coppied and the copy is permuted.
+        c. We need to a make a copy of the array because we need the original ordering array after the sorting algorithm is applied, hence we cant just permute the array in place.

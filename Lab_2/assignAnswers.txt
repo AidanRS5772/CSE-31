@@ -1,0 +1,11 @@
+1:
+    1. Line 25 caused the segmentation fault error.
+    2. You need to scanf on the reference of input.
+    3. The bug is that `sum` is never mutated from its initalization of zero.
+    4. The reference of `sum` needs to be passed to the function not the copy of `sum`.
+2:
+    1. Yes the output is as expected "HELLO!hello!"
+    2. No the output is not as expected "Hi!hi!hello!". The bug is the null terminator is not being places in the right spot. It needs to be inserted after the append is done.
+    3. No the output is not epected I would guess that the size of the array being less then the length of the string is causing the error.
+3:
+    1.

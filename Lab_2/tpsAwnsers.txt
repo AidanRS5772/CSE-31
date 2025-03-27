@@ -1,0 +1,18 @@
+1.
+    1. Aizan, Richard
+    2.  a) https://lldb.llvm.org/use/tutorial.html
+        b) https://firexfly.com/lldb-cheatsheet/
+        c) https://duckduckgo.com/?t=ffab&q=how+to+use+lldb&iax=videos&ia=videos&iai=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dv_C1cvo1biI
+2.
+    1. Compile it for debug in  the following way `clang -g file.c`
+    2. Then run the executable with lldb `lldb a.out`
+    4. In the lldb REPL just input `b (number)` for setting a break point at a specific line in the program. A break point is a point in the program where the debugger waits for user input to continue with executaion and updates tracked values.
+    5. You can either use `s` for step or `n` for next to go through line by line. Step will enter functions and next will skip over executing the functions line by line.
+    6. To watch the value of a variable you can use `watch set var foo` and then to see the values of the variables you are watching you can use `watch lldb`
+    7. Use the comand `c` which will continue to the next break point if there are any or execute.
+    8. You can then exit with the comand `q`
+3.
+    1. There are 4 varibales declared. Two pointers `px` and `py`.
+    2. The values will be random memory data that could be anything. This is because we have reserved the space in memory for the data but not overwritten whatever was there.
+    3. You prevent this by initilizing all the data to some value say zero.
+    8. Yes this result makes sense. `arr` has the same value as `&arr[0]` which is the address of the first element in the array. This makes sense as really `arr[0]` is syntactical sugar for `*(arr + 0)`.
