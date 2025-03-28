@@ -1,0 +1,32 @@
+TPS 1:
+    1.  Text Segment: 0x00400000
+        Data Segment: 0x10010000
+    2. The Source Assembly is the actual assembly that i swritten line by line. The Basic Assembly is the assembly produced from decomposing psudo-instructions into actual instructions and repersenting any literal values with thier direct full width hex values.
+    3. 32 bytes as the starting adress is 0x10010000 and the next adress is 0x10010020.
+    4. 8 columns
+    5. Each column has the data of every word at that adress in the data segment.
+    6. Under the decalration of `.data:` you add `m:    .word 20`
+    7. 0x00400004
+    9. 0x00400008
+    10. Yes, the ascii characters are a byte wide and then they are stored in each word in little endian. So when displayed in memory It looks like "ol I" + "C ev" + "31ES" + "\0\0\0!"
+    11. You load the $v0 register with code 11 then you load the $a0 register with the asciiz you would like to print and then you would do a syscall
+    12. It loades the adress of the label `n` into the $t3 register.
+TPS 2:
+    1. Each instruction coresponds to one circuit in the ALU and minimizing the number of circuits in the ALU is important for speed and efficency. So if all the comparison operations can be done with combinartions of only two circuits then that is what should be done to maximizes efficency.
+TPS 3:
+    Psudocode:
+        int main() {
+            int val, even_sum = 0, odd_sum = 0;
+            while (1) {
+                printf("Please enter a number: ");
+                scanf("%d", &val);
+                if (val == 0) break;
+                if (val == (val >> 1) << 1) {
+                    even_sum += val;
+                } else {
+                    odd_sum += val;
+                }
+            }
+            printf("\nSum of even numbers is: %d\n", even_sum);
+            printf("Sum of even numbers is: %d\n", odd_sum);
+        }

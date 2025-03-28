@@ -1,6 +1,8 @@
 .data
 szMsg: .asciiz "Enter Size: "
 inputMsg: .asciiz "Enter Elements:\n"
+newline: .asciiz "\n"
+space: .asciiz " "
 
 .text
 .globl main
@@ -75,13 +77,13 @@ printArray:
 
         #print space
         li $v0, 11
-        li $a0, ' '
+        la $a0, space
         syscall
 
         addi $t0, $t0, 1 #increment
         j print_loop #loop
     print_end:
-    li $a0, '\n'
+    la $a0, newline
     syscall
 
     jr $ra
