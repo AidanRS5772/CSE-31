@@ -1,0 +1,16 @@
+TPS 1:
+1. A procedure is a block of code that performs a task, a function takes in some data and returns a result from that data, and a method is a function associated with an object in code.
+4. This is line 20 and it adds register $a0 and $a1 and stores the result in $v0.
+5. Yes, you can use a j instead of a jr.
+6. The return address is being saved on line 11 into the $ra register. The value being saved to is zero this value does not make sense in context of the program.
+8. 0x00400028 is the address of the instruction that follows the j Sum.
+9. Yes it is correct.
+10. 15
+11. we should do jal Sum in stead of a jump.
+
+TPS 2:
+1. The output will be and ended up being 38.
+2. Main calls Sum in which it calls Sub and then adds the result of the sum to x+y and prints the result.
+3. When jal is called, the return address is saved for where it was called into $ra. However, when calling a function in a function the return address is overwritten so to go back to main after the call to SUB in SUM you need to save the return address somewhere.
+4. You can save the argument $a0 onto the stack.
+5. The $s0 register is overwritten but then is also used after the call to SUM this will lead to the incorrect result. The value should be stored into a temporary register in the function SUM.

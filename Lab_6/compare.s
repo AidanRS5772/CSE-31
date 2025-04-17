@@ -14,24 +14,16 @@ main:
     la $t1, n
     lw $t1, 0($t1)
 
-    li $v0, 4
-
-    # bge $t0, $t1, else
-    # la $a0, str1
-    # syscall
-    # j exit
-
     ble $t0, $t1, else
+    li $v0, 4
     la $a0, str3
     syscall
     j exit
 
     else:
-        # la $a0, str4
-        # syscall
-
-        la $a0, str2
-        syscall
+    li $v0, 4
+    la $a0, str2
+    syscall
 
 exit:
     li $v0, 10
