@@ -1,0 +1,40 @@
+TPS1:
+    4. Each machine instruction is 32 bits long.
+    5. There are 5 types of instructions: R, I, J, FI, and FR.
+        Examples:
+            R-type: add, and
+            I-type: addi, beq
+            J-type: j, jal
+            FR-type: add.s, div.s
+            FI-type: bclt, bclf
+    6.
+        a.  This is an I type instruction with three feilds. An `rs` feild, `rt` feild, and immediate feild.
+        b.  Opcode: 0x8, rt: $s0 (0x10), rs: $zero (0x0), immediate: 0x19
+        c.  op: 001000 rs: 00000 rt: 10000 im: 0000 0000 0001 1001
+            0b 0010 0000 0001 0000 0000 0000 0001 1001
+            0x    2    0    1    0    0    0    1    9
+    7.
+        a.  0x    0    2    3    0    4    0    2    A
+            0b 0000 0010 0011 0000 0100 0000 0010 1010
+        b.  We know it is a R type instruction because the Op Code is 0. There are 6 feilds: Op, rs, rt, rd, shamt, and funct.
+        c.  op: 0b000000 rs: 0b10001 rt: 0b10000 rd: 0b01000 shamt: 0b00000 funct: 0b101010
+                    0x0        0x11        0x10         0x8            0x0            0x2A
+        d.  The instruction is the `slt` identified by the funct feild. The registers are as follows: rs: $s1, rt: $s0, rd: $t0
+        e.  slt $t0, $s1, $s0
+    8.
+        a.  I type instruction
+        b.  op: 0x5 rs: 0x8 rt: 0x0 im: 0x1
+        c.  The name of the target label is `LESS` and the adress is: 0x0040001c
+        d.  No, the value we put is the difference of the adress of the label and the adress of the following instruction and divide it by 4. This is because in branch instructions they use a reletive adressing scheme.
+        e.  The value would then be 1
+        f.  op: 0b000101 rs: 0b01000 rt: 0b00000 im: 0b 0000 0000 0000 0001
+            0b 0001 0101 0000 0000 0000 0000 0000 0001
+            0x    1    5    0    0    0    0    0    1
+    9.
+        a.  J type instruction
+        b.  op: 0x2
+        c.  label: GREQ adreess: 0x00400030
+        d.  You can only use 26 bits in the adress. The top 4 bits of the 32 bit adress are thrown away aswell as the bottom 2 bits. The bottom 2 bits can be thrown away as all adresses are multiples of 4 so they are always zero, and the top 4 are assumed to be the same as the top 4 of the program counter this limits the jump to be within a 256 MB block where the execution took place.
+        e.  op: 0b000010 ad: 0b 0000 0100 0000 0000 0000 0011 00
+            0b 0000 1000 0001 0000 0000 0000 0000 1100
+            0x    0    8    1    0    0    0    0    c

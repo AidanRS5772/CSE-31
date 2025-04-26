@@ -1,0 +1,8 @@
+TPS 2:
+    1. It will produce 29 if 5 is entered and that is verified.
+    4. We would store the value in $a0 register.
+    5. We would expect the return value to be stored in the $v0 register, so we would first load the value from the $v0 register into the $a0 register for printing then load the $v0 register with the appropriate value.
+    7. Space was made on the stack to save 3 integers, the first of which you would want to store is the $ra register.
+    10. We need to save $a0 to the stack because that register will be used in the subsequent function calls and we need the value it contains after the function call.
+    12. If we call recursion right away the return value will be over written so we need to save the return value before the next function call.
+    15. The value that needs to be restored is the $ra register.
